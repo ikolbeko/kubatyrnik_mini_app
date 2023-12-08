@@ -62,7 +62,7 @@
 
 <main class="container">
   {#if isMainView}
-    <label for="length">Длинна</label>
+    <label for="length">Длина</label>
     <select id="length" bind:value={length} required>
       {#each Object.keys(jsonData) as length}
         <option>{length}</option>
@@ -142,17 +142,18 @@
 
   th,
   td {
-    border: 1px solid #ddd; /* Границы для всех ячеек (можете настроить цвет по своему вкусу) */
-    padding: 8px; /* Внутренний отступ в ячейках */
-    text-align: center; /* Выравнивание по центру */
+    border: 1px solid var(--tg-theme-hint-color);
+    padding: 8px;
+    text-align: center;
   }
 
   :root:not([data-theme="dark"]) {
-    --background-color: var(--tg-theme-bg-color);
-    --color: var(--tg-theme-text-color);
     --primary: var(--tg-theme-button-color);
-    --primary-hover: var(--tg-theme-button-text-color);
-    --primary-focus: var(--tg-theme-hint-color);
-    --primary-inverse: var(--tg-theme-button-text-color);
+    --primary-hover: var(--tg-theme-button-color);
+    --color: var(--tg-theme-text-color);
+    --background-color: var(--tg-theme-bg-color);
+    --form-element-focus-color: var(--tg-theme-secondary-bg-color);
+    --table-row-stripped-background-color: var(--tg-theme-secondary-bg-color);
+    --form-element-active-background-color: var(--tg-theme-secondary-bg-color);
   }
 </style>
